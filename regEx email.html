@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function validate()
+        {
+            var username =  document.getElementById("uname").value;
+            // regx = new RegExp("E00", "i")
+            var regx = /^([a-z0-9\.-]+)@([a-z0-9-]+).([a-z]{2,20})(.[a-z]{2,10})?$/
+            if(regx.test(username)){
+                document.getElementById("lbluser").innerHTML="valid"
+                document.getElementById("lbluser").style.visibility="visible";
+                document.getElementById("lbluser").style.color="green";            }
+            else{
+                document.getElementById("lbluser").innerHTML="invalid"
+                document.getElementById("lbluser").style.visibility="visible";
+                document.getElementById("lbluser").style.color="red";
+            }
+        }
+    </script>   
+</head>
+
+<body>
+    <form>
+        <input id="uname" placeholder="email" type="text" />
+        <br>
+        <label id = "lbluser" style="color:red; visibility:hidden">Invalid Username</label>
+        <br>
+        <button onclick="validate()" type="button">Submit</button>
+    </form>
+</body>
+
+</html>
